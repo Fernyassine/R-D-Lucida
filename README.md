@@ -14,6 +14,7 @@ N'hésitez pas à consulter le wiki de ce projet. Il sera complété au fil du t
 
 # Site officiel de Lucida : 
 http://lucida.ai/
+https://github.com/claritylab/lucida
 
 # Details sur le projet
 
