@@ -1,0 +1,13 @@
+.project
+.pydevproject
+.settings
+gen-py
+lucidaservice
+lucidatypes
+venv
+*.pyc
+config
+.DS_STORE
+inputs
+models
+
