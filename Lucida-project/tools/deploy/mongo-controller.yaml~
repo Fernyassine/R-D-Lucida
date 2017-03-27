@@ -24,4 +24,4 @@ spec:
         - name: mongo-persistent-storage
           hostPath:
             # Modify the path below.
-            path: /home/yassine/Bureau/R-D-Lucida/docker/lucida_data/mongodb
+            path: /home/lucida_data/mongodb

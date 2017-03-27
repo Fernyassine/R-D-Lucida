@@ -25,7 +25,7 @@ spec:
         - containerPort: 8083
           name: thrift
         volumeMounts:
-          - mountPath: home/yassine/Bureau/R-D-Lucida/docker/lucida/lucida/questionanswering/OpenEphyra/db
+          - mountPath: /usr/local/lucida/lucida/questionanswering/OpenEphyra/db
             name: openephyra-persistent-storage
             readOnly: false
       volumes:
