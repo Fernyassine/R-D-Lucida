@@ -1,27 +1,27 @@
 # OpenCV IMM
 
-OpenCV IMM uses [OpenCV](http://opencv.org/), an open-source BSD-licensed library 
-that includes several hundreds of computer vision algorithms. 
+OpenCV IMM utilise [OpenCV](http://opencv.org/), une bibliothèque open source sous licence BSD
+qui inclue des centaines d'algorithme de reconnaissance d'image par ordinateurr. 
 
-## Major Dependencies
+## Dependances majeures
 
 - [OpenCV](http://opencv.org/)
 - [Facebook Thrift](https://github.com/facebook/fbthrift)
 - [MongoDB](https://www.mongodb.com/)
- and [C++ legacy driver](https://github.com/mongodb/mongo-cxx-driver/tree/legacy)
+ et [C++ legacy driver](https://github.com/mongodb/mongo-cxx-driver/tree/legacy)
 
 # Structure
 
-- `server/`: implementation of the IMM server
-- `test/`: implementation of the IMM testing client
+- `server/`: implementation du serveur IMM
+- `test/`: implementation du client test IMM
 
-## Build
+## Compilation
 
 ```
 make
 ```
 
-## Run
+## Lancement
 
 Start the server:
 
@@ -29,9 +29,9 @@ Start the server:
 make start_server
 ```
 
-Wait until you see `IMM at 8082`.
+Attendez de voir `IMM at 8082`.
 
-Alternatively,
+Sinon,
 
 ```
 cd server
@@ -44,21 +44,20 @@ cd server
 make start_test
 ```
 
-Alternatively,
+Sinon,
 
 ```
 cd test
 ./imm_client (num_images)
 ```
 
-7 images `test/test*.jpg` are provided.
+7 images `test/test*.jpg` sont fournies.
 
-## Developing Notes
+## Notes de développement
 
-1. The linker flags in `server/Makefile` are complicated and should be modified with caution.
-Specifically, `-lmongoclient` should precede `-lssl` and `-lcrypto`.
+1. Le linker flags dans `server/Makefile` sont compliqués et doivent être modifiés avec précaution.
+Spécifiquement, `-lmongoclient` doit être précédé par `-lssl` et `-lcrypto`.
 
-2. `server/Image.cpp` uses `cv::SurfFeatureDetector` to turn
-an image into a descriptor matrix both represented as `std::string`,
-and `server/IMMHandler.cpp` saves the matrix into and loads it from
+2. `server/Image.cpp` utilise `cv::SurfFeatureDetector` pour transformer une image dans une matrice de description representés comme `std::string`,
+et `server/IMMHandler.cpp` sauvegarde la matrice à l'intérieur et la charge depuis cette forme.
 [GridFS](https://docs.mongodb.com/manual/core/gridfs/).

@@ -1,25 +1,25 @@
 # Djinn and Tonic
 
-## Major Dependencies
+## Dépendances majeures
 
 - [Caffe](http://caffe.berkeleyvision.org/)
 - [Facebook Thrift](https://github.com/facebook/fbthrift)
 
 # Structure
 
-- `dig/`: implementation of the digit recognition service
-- `face/`: implementation of the facial recognition service
-- `imc/`: implementation of the image classification service
-- `models/`: DNN models necessary for the above services
-- `tools/`: dependencies necessary for Djinn and Tonic
+- `dig/`: implementation du service de reconnaissance de chiffres
+- `face/`: implementation du service de reconnaissance faciale
+- `imc/`: implementation du service de classification d'image
+- `models/`: modèles DNN nécessaire pour les services précités
+- `tools/`: dependances nécéssaires pour Djinn and Tonic
 
-## Build
+## Installation
 
 ```
 make
 ```
 
-## Run
+## Lancement
 
 ```
 cd dig # or face, or imc

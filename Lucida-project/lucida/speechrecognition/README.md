@@ -1,16 +1,16 @@
-# Automatic Speech Recognition (ASR)
+# Reconnaissance Automatique du language (Automatic Speech Recognition: ASR)
 
-The current implementation of ASR uses [Kaldi](http://kaldi.sourceforge.net/),
-a speech recognition toolkit written in C++ that is freely available under the Apache license. 
+L'implémentation actuelle d'ASR utilise [Kaldi](http://kaldi.sourceforge.net/),
+un outil de reconnaissance vocale écrit en C++ qui est librement utilisable sous licence Apache. 
 
 ## Notes:
 
-1. `kaldi_gstreamer_asr` contains the implementation of the Kaldi ASR service.
+1. `kaldi_gstreamer_asr` contient l'implémentation des services ASR de Kaldi.
 
-2. If you want to create and use another ASR implementation,
-you can start by making a directory parallel to `kaldi_gstreamer_asr` and modify `Makefile`.
-Make sure to reference `../lucidaservice.thrift` and `../lucidatypes.thrift`.
+2. Si vous desirez créé et utiliser une autre implémentation d'ASR,
+Vous pouvez commencer par créer un dossier parallèle à `kaldi_gstreamer_asr` et modifier le `Makefile`.
+Assurez vous de faire référence à `../lucidaservice.thrift` et `../lucidatypes.thrift`.
 
-3. Type `make` to build all ASR implementations,
-or type `cd kaldi_gstreamer_asr` and `make` to only build the Kaldi ASR service.
+3. Tapez `make` pour construire toutes les implémentations d'ASR ,
+ou tapez `cd kaldi_gstreamer_asr` et `make` pour créer seulement le service ASR.
 

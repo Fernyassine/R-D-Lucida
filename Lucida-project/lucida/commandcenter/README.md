@@ -33,17 +33,17 @@ query classification module, configuration file (`Config.py`), etc.
 - `app.py`: top-level module
 - `clear_db.sh`: script to clear MongoDB (only for testing)
 
-## Build
+## Compilation
 
 ```
 make
 ```
 
-This generates Thrift modules and thus only needs to be done once.
+Génération des modules Thrift et ceux nécessaire.
 
-## Run
+## Lancement
 
-Start the server without using Apache:
+Démarrer le serveur sans utiliser Apache:
 
 ```
 make start_server
