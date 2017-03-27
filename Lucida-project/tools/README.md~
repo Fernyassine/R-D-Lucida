@@ -34,6 +34,14 @@ Autres scripts:
 Si vous utilisew Ubuntu 16.04' modifier le fichier `python_requirements.txt` pour avoir la ligne suivante : `pyOpenSSL==0.14`, mais soyez conscient qu'il se peut que vous rencontriez des difficultes a compiler OpenCV.
 Assurer vous donc d'utiliser `gcc 4.8.4`, car MongoDB C++ driver echoue a compiler sur des versions plus recentes de gcc.
 
-2. Chaque script effectue un simple controle pour s'assurer si le package est installe. Si pour une quelconque raison, l'installation vient a echouer ou simplement que le check n'est pas suffisant et que vous souhaitez forcer l'installation, utiliser :```sudo ./install_xxx.sh```, ou ouvrez le script et executez manuellement chaque commande qui s'y trouve.
+2. Each script performs a simple check on whether the package is
+installed. If for some reason the installation failed, or the simple check
+is not sufficient and you want to force reinstallation,
+please either ```sudo ./install_xxx.sh```, 
+or open the script and run the commands manually to make sure each command succeeds.
 
-3. Apache Thrift et Facebook sont indispensable, et vous devez imperativement installer Apache Thrift en premier et ensuite seulement installer Facebook Thrift. Le `Makefile` s'assure de cette condition, mais si pour une raison quelconque vous inversez l'ordre (pour l'installation ou la compilation) retourner dans le dossier de Facebook Thrift: `cd fbthrift/thrift/` et executer `sudo make install`, ce qui ne devrait pas prendre enormement de temps, etant donne qu'il est deja compile.
+3. Both Apache Thrift and Facebook are necessary, and you must install Apache Thrift first,
+and then install Facebook Thrift. The `Makefile` guarantees that, but
+if for some reason you reverse the order (both compiled and installed),
+simply go back to Facebook Thrift: `cd fbthrift/thrift/`
+and `sudo make install` which should not take too long because it is already compiled.
