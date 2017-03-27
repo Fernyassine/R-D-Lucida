@@ -5,7 +5,7 @@ from AccessManagement import login_required
 from Database import database 
 from ThriftClient import thrift_client
 from Utilities import log, check_image_extension, check_text_input
-
+import sys, fileinput, os
 
 learn = Blueprint('learn', __name__, template_folder='templates')
 
@@ -68,6 +68,27 @@ def learn_route():
 						text_data, text_id)
 				# Add the text knowledge into the database.
 				database.add_text(username, text_type, text_data, text_id)	
+			# Add keyword knowledge.
+			elif form['op'] == 'add_db':			
+				keyword_data = form['keyword']
+				image_type = 'image'
+				#os.system("python /home/badrzahir/Desktop/lucida-populate-db.py " + keyword_data)
+				path = "/home/badrzahir/Desktop/"+keyword_data
+				dirs = os.listdir(path)
+				for image in dirs:
+					im = image
+					print im
+					upload_file = open("/home/badrzahir/Desktop/"+keyword_data+"/"+image, 'r')
+					#if upload_file.filename == '':
+					#	raise RuntimeError('Empty file is not allowed')
+					# Generate the id.
+					image_data = upload_file.read()
+					image_id = hashlib.md5(username + str(datetime.datetime.now())).hexdigest()
+					# Send the image to IMM.
+					upload_file.close()
+					thrift_client.learn_image(username, image_type, image_data, image_id)
+    					database.add_image(username, image_data, keyword_data, image_id)
+				os.system("rm -Rf /home/badrzahir/Desktop/"+keyword_data)
 			# Delete text knowledge.
 			elif form['op'] == 'delete_text':
 				text_type = 'unlearn'

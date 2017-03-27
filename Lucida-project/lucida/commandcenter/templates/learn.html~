@@ -53,6 +53,29 @@
 		</form>
 	</div>
 
+	<div class="container">
+		<div class="row">
+			<p><h3>Insert your keyword:</h3></p>
+		</div>
+	</div>
+	
+	<div class="container">
+		<form action="" method="post" enctype="multipart/form-data">
+			<input name="op" type="hidden" value="add_db"></input>
+
+			<div class="form-group">
+				<label class="col-sm-3 control-label">Keyword: </label>
+				<div class="col-sm-8">
+					<input name="knowledge" class="form-control" placeholder="Insert your keyword">
+				</div>
+			</div>
+
+			<div class="form-group">
+				<input type="submit" value="Run" class="btn btn-info btn-sm">
+			</div>
+		</form>
+	</div>
+
 	<ul>
 	{% for i in text %}
 		<form action="" method="post" enctype="multipart/form-data">
